@@ -62,10 +62,14 @@ class EndScreen extends StatelessWidget {
             SizedBox(height: 10),
             TextButton(
               onPressed: () {
-                Navigator.pushAndRemoveUntil(
+                Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()),
-                  (route) => false,
+                  MaterialPageRoute(
+                    builder: (_) => HomeScreen(
+                      userId: 0,
+                      username: '',
+                    ), // Reemplaza 0 con el valor adecuado de userId
+                  ),
                 );
               },
               child: Text(

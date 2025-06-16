@@ -1,3 +1,5 @@
+//game_screen.dart
+
 import 'dart:math';
 import 'package:flutter/material.dart';
 import '../data/questions.dart';
@@ -24,14 +26,13 @@ class _GameScreenState extends State<GameScreen> {
 
   void loadQuestions() {
     List<String> source;
-    if (widget.mode == 'Normal') {
+    if (widget.mode == 'normal') {
       source = normalQuestions;
-    } else if (widget.mode == 'Profundo') {
+    } else if (widget.mode == 'deep') {
       source = deepQuestions;
-    } else if (widget.mode == 'Hot') {
+    } else if (widget.mode == 'hot') {
       source = hotQuestions;
     } else {
-      // Aleatorio
       source = [...normalQuestions, ...deepQuestions, ...hotQuestions];
     }
 
@@ -41,11 +42,11 @@ class _GameScreenState extends State<GameScreen> {
 
   Color getBackgroundColor() {
     switch (widget.mode) {
-      case 'Normal':
+      case 'normal':
         return Colors.blue;
-      case 'Profundo':
+      case 'deep':
         return Colors.grey;
-      case 'Hot':
+      case 'hot':
         return Colors.red;
       default:
         return Colors.deepPurple;
@@ -54,11 +55,11 @@ class _GameScreenState extends State<GameScreen> {
 
   Color getTextColor() {
     switch (widget.mode) {
-      case 'Normal':
+      case 'normal':
         return Colors.blue;
-      case 'Profundo':
+      case 'deep':
         return Colors.grey;
-      case 'Hot':
+      case 'hot':
         return Colors.red;
       default:
         return Colors.deepPurple;

@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class ModeButton extends StatelessWidget {
   final Color color;
   final String title;
-  final VoidCallback onPressed;
+  final VoidCallback onTap;
 
   const ModeButton({
     required this.color,
     required this.title,
-    required this.onPressed,
+    required this.onTap,
   });
 
   @override
@@ -19,7 +19,7 @@ class ModeButton extends StatelessWidget {
         minimumSize: Size(200, 50),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
-      onPressed: onPressed,
+      onPressed: onTap,
       child: Text(title, style: TextStyle(fontSize: 18, color: Colors.white)),
     );
   }
